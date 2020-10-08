@@ -16,8 +16,13 @@ export class PersonaRegistroComponent implements OnInit {
     this.persona = new Persona;
   }
   add(){
-    alert ('Se registro una persona nueva' + JSON.stringify(this.persona));
-    this.personaService.post(this.persona);
+    if(this.personaService.post(this.persona)==true){
+      alert('persona guardada')
+    }
+    else{
+      alert('id ya existe')
+    }
+    
   }
 
 }
